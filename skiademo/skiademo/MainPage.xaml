@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:pages="clr-namespace:yfxsApp"
+            x:Class="skiademo.MainPage"
+            xmlns:local="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+            Title="appname">
+    <TabbedPage.ToolbarItems>
+        <ToolbarItem Text="aaa"></ToolbarItem>
+    </TabbedPage.ToolbarItems>
+    <ContentPage Title="a" >
+        <ListView x:Name="recentreadinglist" >
+        </ListView>
+    </ContentPage>
+    <ContentPage Title="b">
+        <StackLayout>
+            <SearchBar x:Name="searchbar"></SearchBar>
+            <local:SKGLView PaintSurface="SKGLView_PaintSurface"></local:SKGLView>
+            <Label Text="the result of 'Canvas.Clear(SkiaSharp.SKColors.White);'"></Label>
+        </StackLayout>
+    </ContentPage>
+    <ContentPage Title="c">
+        <ListView x:Name="moreitemlist">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Text}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage>
+</TabbedPage>
